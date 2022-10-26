@@ -6,18 +6,29 @@
 }
 
 .title {
-    margin-top: 20px;
+    margin: 20px;
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
 }
 
+.description {
+    text-align: justify;
+    background-color: rgb(75, 86, 85);
+    color: white;
+    &_content {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 30px 40px;
+    }
+}
+
 .inputs {
     width: 350px;
+    margin: 20px auto;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     &_container {
         padding-top: 10px;
         display: flex;
