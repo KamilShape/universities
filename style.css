@@ -17,8 +17,18 @@
   background-color: rgb(75, 86, 85);
   color: white;
 }
+@media (min-width: 768px) {
+  .description {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.4rem;
+  }
+}
 .description_content {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 30px 40px;
 }
@@ -30,17 +40,50 @@
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .inputs {
+    width: 100%;
+    max-width: 900px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
 .inputs_container {
   padding-top: 10px;
   display: flex;
+}
+@media (min-width: 768px) {
+  .inputs_container {
+    width: 50%;
+    text-align: right;
+  }
 }
 .inputs_label {
   width: 40%;
   display: block;
   margin: auto;
+  padding-right: 10px;
+  font-size: 1.2rem;
 }
 .inputs_input {
   width: 60%;
   padding: 5px;
   font-size: 1.2rem;
+}
+
+.searchButton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(75, 86, 85);
+  border: none;
+  border-radius: 15px 0;
+  transition: 0.3s ease-in-out;
+}
+.searchButton:hover {
+  background-color: rgba(75, 86, 85, 0.7);
+  border-radius: 0 15px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

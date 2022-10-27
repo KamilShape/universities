@@ -5,9 +5,7 @@ const searchButton = document.querySelector('.searchButton')
 const countryInput = document.querySelector('.inputs_input--country')
 
 let name = ''
-let country = ''
-
-
+let country = 'Afghanistan'
 
 const countries = function() {
     console.log(countryInput.innerHTML)
@@ -21,7 +19,12 @@ const countries = function() {
 
 countries()
 const handleInput = function(e) {
-    console.log(e.target.value)
+    if (e.target.type === 'select-one') {
+        country = e.target.value
+    }
+    if (e.target.type === 'text') {
+        name = e.target.value
+    }
 }
 
 const showUniversities = function() {
