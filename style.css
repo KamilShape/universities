@@ -71,6 +71,27 @@
   font-size: 1.2rem;
 }
 
+.list {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+.list_row {
+  text-align: center;
+  background-color: rgba(75, 86, 85, 0.7);
+}
+.list_row:nth-child(odd) {
+  background-color: rgba(75, 86, 85, 0.4);
+}
+.list_header {
+  color: white;
+  padding: 10px 5px;
+  background-color: rgb(75, 86, 85);
+}
+.list_data {
+  padding: 5px;
+}
+
 .searchButton {
   display: block;
   margin: 0 auto;
