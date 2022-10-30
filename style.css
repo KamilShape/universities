@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+section {
+  min-width: 375px;
+}
+
 .title {
   margin: 20px;
   font-size: 2rem;
@@ -71,6 +75,12 @@
   font-size: 1.2rem;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}
+
 .list {
   width: 90%;
   margin: 30px auto;
@@ -92,7 +102,7 @@
   padding: 5px;
 }
 
-.searchButton {
+.search_button {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
@@ -103,8 +113,12 @@
   border-radius: 15px 0;
   transition: 0.3s ease-in-out;
 }
-.searchButton:hover {
+.search_button:hover {
   background-color: rgba(75, 86, 85, 0.7);
   border-radius: 0 15px;
   cursor: pointer;
+}
+.search_toggle {
+  display: block;
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */

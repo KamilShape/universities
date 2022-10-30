@@ -23,15 +23,18 @@
     <section class="inputs">
         <div class="inputs_container">
             <label class="inputs_label">Select Country: </label>
-            <select class="inputs_input inputs_input--country">
+            <select class="inputs_input  inputs_input--country">
             </select>
         </div>
         <div class="inputs_container">
             <label class="inputs_label">Name: </label>
-            <input type="text" class="inputs_input inputs_input--name">
+            <input disabled type="text" class="inputs_input inputs_input--name">
         </div>
     </section>
-    <button class="searchButton">SEARCH</button>
+    <section class="search">
+        <button class="search_button">SEARCH</button>
+        <input type="checkbox" class="search_toggle">
+    </section>
     <table class="list">
         <tr class="list_row">
             <th class="list_header">Country</th>

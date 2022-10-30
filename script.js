@@ -1,12 +1,13 @@
 import { countryList } from './countries.js'
 
-const nameInput = document.querySelector('.inputs_input--name')
-const searchButton = document.querySelector('.searchButton')
 const countryInput = document.querySelector('.inputs_input--country')
+const nameInput = document.querySelector('.inputs_input--name')
+const searchButton = document.querySelector('.search_button')
 const list = document.querySelector('.list')
+const checkbox = document.querySelector('.search_toggle')
 
 let name = ''
-let country = 'Afghanistan'
+let country = ''
 let universites = []
 
 const countries = function() {
@@ -16,6 +17,8 @@ const countries = function() {
         country = newCountry.value
         countryInput.appendChild(newCountry)
     })
+    console.log(countryInput.value)
+    country = countryInput.value
 }
 countries()
 
@@ -37,6 +40,18 @@ const universities = function(array) {
         list.appendChild(newRow)
     })
 
+}
+const toggleInput = function() {
+    if (this.checked === true) {
+        nameInput.disabled = false
+        countryInput.disabled = true
+        country = ''
+    } else {
+        nameInput.disabled = true
+        countryInput.disabled = false
+        country = countryInput.value
+    }
+    console.log(countryInput.value)
 }
 const handleInput = function(e) {
     if (e.target.type === 'select-one') {
@@ -65,7 +80,7 @@ const showUniversities = function() {
     }
 
 }
-
+checkbox.addEventListener('click', toggleInput)
 nameInput.addEventListener('input', handleInput)
 countryInput.addEventListener('input', handleInput)
 searchButton.addEventListener('click', showUniversities)
