@@ -84,8 +84,8 @@
   background-color: rgba(75, 86, 85, 0.4);
 }
 .list_header {
-  color: white;
   padding: 10px 5px;
+  color: white;
   background-color: rgb(75, 86, 85);
 }
 .list_data {
