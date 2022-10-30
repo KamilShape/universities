@@ -21,21 +21,19 @@ countries()
 
 const universities = function(array) {
     array.forEach(element => {
-        console.log(element.name, element.country, element.domains[0])
         let newRow = document.createElement('tr')
         let countryData = document.createElement('td')
         let nameData = document.createElement('td')
         let websiteData = document.createElement('td')
-        newRow.classList.add('list_row')
-        countryData.classList.add('list_data')
-        nameData.classList.add('list_data')
-        websiteData.classList.add('list_data')
+        newRow.classList.add('list_row', 'data_row')
+        let elements = [countryData, nameData, websiteData]
+        elements.forEach(element => {
+            element.classList.add('list_data')
+        })
         countryData.innerText = element.country
         nameData.innerText = element.name
         websiteData.innerText = element.domains[0]
-        newRow.appendChild(countryData)
-        newRow.appendChild(nameData)
-        newRow.appendChild(websiteData)
+        newRow.append(countryData, nameData, websiteData)
         list.appendChild(newRow)
     })
 
@@ -50,6 +48,10 @@ const handleInput = function(e) {
 }
 
 const showUniversities = function() {
+    let rows = document.querySelectorAll('.data_row')
+    rows.forEach(row => {
+        row.remove()
+    })
     if (name !== '' || country !== '') {
         fetch(`http://universities.hipolabs.com/search?name=${name}&country=${country}`)
             .then(response => response.json())
@@ -61,7 +63,7 @@ const showUniversities = function() {
     } else {
         console.log('Please fill name or country.')
     }
-    universites = []
+
 }
 
 nameInput.addEventListener('input', handleInput)
