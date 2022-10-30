@@ -5,6 +5,7 @@ const nameInput = document.querySelector('.inputs_input--name')
 const searchButton = document.querySelector('.search_button')
 const list = document.querySelector('.list')
 const checkbox = document.querySelector('.search_toggle')
+const checkboxLabel = document.querySelector('.checkbox_label')
 
 let name = ''
 let country = ''
@@ -28,6 +29,9 @@ const universities = function(array) {
         let countryData = document.createElement('td')
         let nameData = document.createElement('td')
         let websiteData = document.createElement('td')
+        let link = document.createElement('a')
+        link.href = element.web_pages[0]
+        link.target = '_blank'
         newRow.classList.add('list_row', 'data_row')
         let elements = [countryData, nameData, websiteData]
         elements.forEach(element => {
@@ -35,24 +39,30 @@ const universities = function(array) {
         })
         countryData.innerText = element.country
         nameData.innerText = element.name
-        websiteData.innerText = element.domains[0]
+        link.innerText = element.web_pages[0]
+        websiteData.appendChild(link)
         newRow.append(countryData, nameData, websiteData)
         list.appendChild(newRow)
     })
-
 }
+
 const toggleInput = function() {
     if (this.checked === true) {
         nameInput.disabled = false
         countryInput.disabled = true
+        checkboxLabel.innerText = "Search by country"
         country = ''
     } else {
         nameInput.disabled = true
         countryInput.disabled = false
         country = countryInput.value
+        checkboxLabel.innerText = "Search by name"
+        name = ''
+        nameInput.value = ''
     }
     console.log(countryInput.value)
 }
+
 const handleInput = function(e) {
     if (e.target.type === 'select-one') {
         country = e.target.value
@@ -71,15 +81,16 @@ const showUniversities = function() {
         fetch(`http://universities.hipolabs.com/search?name=${name}&country=${country}`)
             .then(response => response.json())
             .then((response) => {
+                console.log(response)
                 universites = response
                 universities(universites)
             })
             .catch(err => console.error(err));
     } else {
-        console.log('Please fill name or country.')
+        alert('Please fill name or country.')
     }
-
 }
+
 checkbox.addEventListener('click', toggleInput)
 nameInput.addEventListener('input', handleInput)
 countryInput.addEventListener('input', handleInput)

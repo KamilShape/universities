@@ -14,28 +14,31 @@
 
 <body>
     <h1 class="title">university search engine</h1>
-    <section class="description">
-        <p class="description_content">
+    <section class="intro description">
+        <p class="intro_content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit inventore culpa animi error quisquam debitis est explicabo qui incidunt quidem eius repudiandae veritatis aliquam facere, maxime nam quaerat velit repellendus enim! Vero dolore fugiat aspernatur
             repudiandae earum. Impedit voluptatibus dolor aut labore qui? Nesciunt libero, cumque vel accusamus laborum quaerat.
         </p>
     </section>
-    <section class="inputs">
+    <section class="inputs description">
         <div class="inputs_container">
-            <label class="inputs_label">Select Country: </label>
-            <select class="inputs_input  inputs_input--country">
+            <label class="inputs_label description">Select Country: </label>
+            <select class="inputs_input  inputs_input--country description">
             </select>
         </div>
         <div class="inputs_container">
-            <label class="inputs_label">Name: </label>
-            <input disabled type="text" class="inputs_input inputs_input--name">
+            <label class="inputs_label description">Name: </label>
+            <input disabled type="text" class="inputs_input inputs_input--name description">
         </div>
     </section>
     <section class="search">
-        <button class="search_button">SEARCH</button>
-        <input type="checkbox" class="search_toggle">
+        <div class="checkbox_container">
+            <input type="checkbox" class="search_toggle">
+            <label class="checkbox_label description">Search by name</label>
+        </div>
+        <button class="search_button description">SEARCH</button>
     </section>
-    <table class="list">
+    <table class="list description">
         <tr class="list_row">
             <th class="list_header">Country</th>
             <th class="list_header">Name</th>
