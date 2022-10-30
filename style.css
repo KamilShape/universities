@@ -15,9 +15,29 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 2.2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 1414px) {
+  .title {
+    font-size: 2.4rem;
+  }
+}
 
 .intro {
-  text-align: justify;
+  text-align: center;
   background-color: rgb(75, 86, 85);
   color: white;
 }
@@ -28,17 +48,17 @@ body {
 }
 
 .inputs {
-  width: 350px;
-  margin: 20px auto;
   display: flex;
   flex-direction: column;
+  width: 350px;
+  margin: 20px auto;
 }
 @media (min-width: 768px) {
   .inputs {
-    width: 100%;
-    max-width: 900px;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
+    max-width: 900px;
   }
 }
 .inputs_container {
@@ -110,6 +130,9 @@ body {
   padding: 10px 5px;
   color: white;
   background-color: rgb(75, 86, 85);
+}
+.list_data {
+  padding: 5px;
 }
 .list_data a {
   color: black;
